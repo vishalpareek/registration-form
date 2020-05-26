@@ -1,0 +1,76 @@
+.mat-card {    
+    text-align: -webkit-left;  
+    padding: 0px;  
+}    
+    
+.demo-toolbar {    
+    display: flex;    
+    align-items: center;    
+    width: 100%;    
+}    
+    
+.container {    
+    overflow:hidden;  
+    height:100%;  
+    background: darkturquoise;
+}    
+    
+.demo-full-width {    
+    width: 100%;    
+}    
+    
+body {    
+    margin: 0;    
+    font-family: Roboto, sans-serif;    
+}    
+    
+mat-card {    
+    max-width: 70%;    
+    margin: 8% auto;    
+    text-align: center;    
+}    
+    
+mat-toolbar-row {    
+    justify-content: space-between;    
+}    
+    
+.done {    
+    position: fixed;    
+    bottom: 20px;    
+    right: 20px;    
+    color: white;    
+}    
+    
+.content-center {    
+    text-align: -webkit-center;    
+}
+
+.float-right
+{
+  float: right;
+}
+
+.red {
+  color: red;
+}
+
+mat-card-title.form-header {
+  text-align: center;
+  background: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.sub-title {
+  padding: 16px 16px 0px 16px;
+}
+
+mat-card-content.form-content
+{
+  padding: 0px 16px 16px 16px;
+}
+
+mat-card-actions.login-action-container {
+  padding: 8px 10px;
+}

@@ -1,0 +1,100 @@
+<div class="container">
+	<mat-card>    
+	    <!-- Title of an Card -->    
+	    <mat-card-title class="form-header">    
+	        REGISTRATION FORM    
+	    </mat-card-title>    
+	    <mat-card-subtitle class="red sub-title">
+	    	Fields marked with * are mandatory.
+	    </mat-card-subtitle>
+	    <mat-card-content class="form-content">    
+	        <form [formGroup]="registrationForm" (ngSubmit)="onFormSubmit(registrationForm.value)">    
+	            <table class="demo-full-width">
+	            	<tr>    
+	                    <td>    
+	                        <mat-form-field>    
+	                            <mat-select placeholder="Your Title" required="true" formControlName="Title">    
+	                                <mat-option> Your Title</mat-option>    
+	                                <mat-option value="1">Mr.</mat-option>    
+	                                <mat-option value="2">Mrs.</mat-option>    
+	                                <mat-option value="3">Prof.</mat-option>    
+	                            </mat-select> 
+	                            <mat-error *ngIf="!registrationForm.get('Title').valid && registrationForm.get('Title').touched">Please select Title !!!</mat-error>   
+	                        </mat-form-field>     
+	                    </td>
+	                </tr>    
+	                <tr>    
+	                    <td>    
+	                        <mat-form-field class="demo-full-width">    
+	                            <input matInput formControlName="FirstName" required="true" placeholder="Your First Name" >  
+	                            <mat-error *ngIf="registrationForm.controls['FirstName'].errors?.required">Please enter First Name !!!</mat-error>  
+		                        <mat-error *ngIf="registrationForm.controls['FirstName'].errors?.pattern"> First name must have alphabats only.</mat-error> 
+	                        </mat-form-field>    
+	                    </td>    
+	                    <td>    
+	                        <mat-form-field class="demo-full-width">    
+	                            <input matInput formControlName="LastName" required="true" placeholder="Your Last Name/Surname"> 
+	                            <mat-error *ngIf="registrationForm.controls['LastName'].errors?.required">Please enter Last Name !!! </mat-error> 
+		                        <mat-error *ngIf="registrationForm.controls['LastName'].errors?.pattern"> Last name must have alphabats only.</mat-error>   
+	                        </mat-form-field>    
+	                    </td>    
+	                </tr>    
+	                <tr>    
+	                    <td>    
+	                        <mat-form-field class="demo-full-width">
+							    <input matInput formControlName="Email" type="email" required="true" placeholder="Email">
+							    <mat-error *ngIf="!registrationForm.get('Email').valid && registrationForm.get('Email').touched">
+							      Please enter a valid email address.
+							    </mat-error>
+							  </mat-form-field>    
+	                    </td>    
+	                    <td>    
+	                        <mat-form-field class="demo-full-width">    
+	                            <input matInput formControlName="ConfirmEmail" required="true" placeholder="Confirm Email" >   
+	                            <mat-error *ngIf="!registrationForm.get('ConfirmEmail').valid && registrationForm.get('ConfirmEmail').touched">
+							      Confirm Email should be same as email.
+							    </mat-error>
+	                        </mat-form-field>    
+	                    </td>    
+	                </tr>    
+	                <tr>    
+	                    <td>    
+	                        <!-- <mat-form-field class="demo-full-width">    
+	                            <input matInput formControlName="DOB" required="true" [matDatepicker]="picker" placeholder="Date of birth">    
+	                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>    
+	                            <mat-datepicker touchUi="true" #picker></mat-datepicker>  
+	                            <mat-error *ngIf="!registrationForm.get('DOB').valid && registrationForm.get('DOB').touched">DOB is <strong>required</strong> 
+		                        </mat-error>  
+	                        </mat-form-field> --> 
+	                        <app-generic-date-picker formControlName="DOB" label="Date of Birth : "></app-generic-date-picker>
+	                    </td> 
+	                    <td>    
+	                        <mat-form-field class="demo-full-width">    
+	                            <input matInput formControlName="PhoneNumber" required="true" placeholder="Phone Number"> 
+	                            <mat-error *ngIf="registrationForm.controls['PhoneNumber'].errors?.required">Phone Number is <strong>required</strong></mat-error>
+            					<mat-error *ngIf="registrationForm.controls['PhoneNumber'].errors?.minlength">Please enter 11 digit phone number.</mat-error>
+            					<mat-error *ngIf="registrationForm.controls['PhoneNumber'].errors?.maxlength">Please enter 11 digit phone number.</mat-error>  
+	                            <!-- <mat-error *ngIf="!registrationForm.get('PhoneNumber').valid && registrationForm.get('PhoneNumber').touched">Please enter Phone Number !!!</mat-error> -->     
+	                        </mat-form-field>    
+	                    </td>   
+	                </tr>
+	                <tr>
+	                	<td>    
+	                        <mat-form-field class="demo-full-width">    
+	                            <input matInput formControlName="Password" type="password" required="true" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">  
+	                            <mat-error *ngIf="registrationForm.controls['Password'].errors?.required">Password is <strong>required</strong> 
+		                        </mat-error>  
+		                        <mat-error *ngIf="registrationForm.controls['Password'].errors?.pattern"> Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.</mat-error>
+	                        </mat-form-field>    
+	                    </td>
+	                </tr>        
+	                <tr>    
+	                    <mat-card-actions class="login-action-container">   
+	                        <button mat-raised-button color="accent" [disabled]="!registrationForm.valid">Submit</button>
+	                    </mat-card-actions>  
+	                </tr>    
+	            </table>    
+	        </form>    
+	    </mat-card-content>    
+	</mat-card>
+</div>

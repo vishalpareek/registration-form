@@ -1,0 +1,49 @@
+<div class="user-info-container">
+	<div class="inner-container-user-info">
+		<mat-card class="user-avatar-card">
+	  		<mat-card-header class="avatar-header">
+	   			<mat-icon mat-card-avatar class="user-avatar">account_circle</mat-icon>
+	   		</mat-card-header>
+	   		<mat-card-content class="avatar-user-name">
+	   			<h3>{{userdata.FirstName}} {{userdata.LastName}}</h3>
+	   		</mat-card-content>
+		</mat-card>
+		<mat-card class="user-info-card">
+			<mat-tab-group mat-align-tabs="start">
+			  	<mat-tab label="User Information"></mat-tab>
+			</mat-tab-group>
+		    <mat-card-content class="form-content">     
+		            <table class="demo-full-width">
+		            	<tr>    
+		                    <td class="key-label"> Title : </td>
+		                    <td> {{userdata.Title}} </td>
+		                </tr>    
+		                <tr>    
+		                    <td class="key-label">First Name : </td>  
+		                    <td>{{userdata.FirstName}}</td>
+		                </tr>    
+		                <tr>
+		                    <td class="key-label">Last Name : </td>  
+		                    <td>{{userdata.LastName}}</td> 
+		                </tr>   
+		                <tr> 
+		                	<td class="key-label">Email : </td>  
+		                    <td>{{userdata.Email}}</td>
+		                </tr>    
+		                <tr>
+		                    <td class="key-label">Date of Birth : </td>  
+		                    <td>{{userdata.DOB.toLocaleDateString('en-GB')}}</td>    
+		                        
+		                </tr>    
+		                <tr>    
+		                    <td class="key-label">Phone Number : </td>  
+		                    <td>{{userdata.PhoneNumber}}</td>	                    
+		                </tr> 
+		            </table> 
+		            <mat-card-actions class="user-info-btn-container">   
+                        <button mat-raised-button color="accent" (click)="goBackToLogin();">Back</button>       
+                    </mat-card-actions>      
+		    </mat-card-content>    
+		</mat-card>
+	</div>
+</div>

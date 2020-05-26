@@ -1,0 +1,51 @@
+.user-info-container{
+	overflow: hidden;
+    background: darkturquoise;
+    height: 100%;
+}
+
+.inner-container-user-info{
+	width: 60%;
+    margin: auto;
+    margin-top: 10%;
+    display: flex;
+}
+
+.user-avatar-card{
+	flex: .2;
+    margin-right: 15px;
+    height: 150px;
+}
+
+.user-info-card{
+	flex: 1;
+}
+
+.user-avatar {
+	height: 130px;
+	width: 130px;
+	font-size: 130px;
+}
+
+.avatar-header {
+	width: 80%;
+    margin: auto;
+}
+
+.avatar-user-name {
+	text-align: center;
+}
+
+.demo-full-width tr {
+    line-height: 2em;
+}
+
+.key-label {
+	width:60%;
+	font-weight: 700;
+}
+
+.user-info-btn-container {
+	padding-left: 10px;
+    margin-top: 20px;
+}
